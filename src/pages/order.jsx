@@ -6,7 +6,7 @@ import OrderDetail from "@/components/Order/OrderDetail";
 const Order = () => {
     return (
         <Layout>
-            <div className="mx-3">
+            <div className="mx-3 md:mx-16">
                 <div className="w-full uppercase text-orange-400 text-4xl">Уже сделали заказ?</div>
                 <div className="w-full text-xl mt-6">Можете проверить на каком этапе разработки он сейчас</div>
                 <Search />

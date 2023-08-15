@@ -5,8 +5,8 @@ const OrderStep = ({task}) => {
     const inProgress = task.state === "в процессе"
 
     return (
-        <div className="flex">
-            <div className="grow collapse sm:visible">
+        <div className="flex xl:w-[984px]">
+            <div className="grow hidden sm:block">
                 <div className="me-3 flex flex-col items-center h-full">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         {(isCompleted || inProgress) &&

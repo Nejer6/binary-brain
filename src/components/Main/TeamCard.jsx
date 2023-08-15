@@ -6,8 +6,8 @@ const TeamCard = ({name, description, src}) => {
 
                 <img
                     className="w-full object-cover"
-
                     src={src}
+                    alt=""
                 />
 
 

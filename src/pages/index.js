@@ -3,13 +3,10 @@ import Header from "@/components/Header";
 import Main from "@/components/Main/Main";
 import AboutUs from "@/components/Main/AboutUs";
 import OurServices from "@/components/Main/OurServices";
-import Footer from "@/components/Footer";
 import {useEffect, useRef, useState} from "react";
 import Team from "@/components/Main/Team";
 import ModalWindow from "@/components/Main/ModalWindow";
 import Layout from "@/components/Layout";
-
-const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
     const chapters = [

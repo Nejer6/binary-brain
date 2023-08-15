@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import HeaderElement from "@/components/HeaderElement";
-import Image from "next/image";
 
 const Header = ({tabs, activeTab}) => {
     // const [selected, setSelected] = useState(tabs[0].title)

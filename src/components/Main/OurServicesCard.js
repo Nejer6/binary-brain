@@ -5,7 +5,7 @@ const OurServicesCard = ({title, text, src}) => {
         <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
             <div>
                 <div className="flex items-center bg-sky-400 justify-center w-full h-64">
-                    <img src={src} className="w-55 h-55"/>
+                    <img src={src} className="w-55 h-55" alt=""/>
                 </div>
             </div>
 

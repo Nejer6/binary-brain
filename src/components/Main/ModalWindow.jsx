@@ -1,10 +1,11 @@
 import React from 'react';
 import ModalInput from "@/components/Main/ModalInput";
+import Button from "@/components/Main/Button";
 
 const ModalWindow = ({onClick}) => {
     return (
         <div
-            className="fixed top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center"
+            className="fixed z-20 top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center"
             onClick={onClick}
         >
             <div
@@ -38,9 +39,10 @@ const ModalWindow = ({onClick}) => {
                     </div>
 
                     <div className="cursor-pointer bg-sky-400 mt-6 w-80">
-                        <div className="text-center text-white uppercase text-xl leading-9 m-4">
-                            Оставить заявку
-                        </div>
+                        {/*<div className="text-center text-white uppercase text-xl leading-9 m-4">*/}
+                        {/*    Оставить заявку*/}
+                        {/*</div>*/}
+                        <Button className="mt-6 w-80" text="Оставить заявку"/>
                     </div>
                 </div>
             </div>

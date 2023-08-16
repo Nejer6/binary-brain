@@ -1,4 +1,3 @@
-import {Inter} from 'next/font/google'
 import Header from "@/components/Header";
 import Main from "@/components/Main/Main";
 import AboutUs from "@/components/Main/AboutUs";

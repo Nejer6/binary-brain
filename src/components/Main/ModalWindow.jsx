@@ -15,7 +15,7 @@ const ModalWindow = ({onClick}) => {
             >
                 <div className="mx-16 my-12">
                     <div className="flex-wrap-reverse justify-end flex items-start">
-                        <div className="text-sky-400 text-4xl uppercase text-start w-full md:w-auto">Понравилась наша работа?</div>
+                        <div className="text-sky-400 text-4xl uppercase text-start w-full md:w-auto font-tektur">Понравилась наша работа?</div>
                         <img
                             src="/cross.svg"
                             width={40}
@@ -31,9 +31,9 @@ const ModalWindow = ({onClick}) => {
 
                     <div className="mt-12">
                         <ModalInput placeholder="Иван" title="Имя"/>
-                        <ModalInput placeholder="@ivan123" title="Telegram"/>
                         <ModalInput placeholder="ivanivanov123@mail.ru" title="E-mail"/>
                         <ModalInput placeholder="8 (123) 456-78-90" title="Номер телефона"/>
+                        <ModalInput placeholder="@ivan123" title="Telegram"/>
                         <div className="border-t-2 border-sky-400"/>
                     </div>
 

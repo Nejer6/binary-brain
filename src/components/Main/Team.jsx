@@ -4,7 +4,7 @@ import TeamCard from "@/components/Main/TeamCard";
 const Team = () => {
     return (
         <div>
-            <div className="text-orange-400 text-5xl uppercase text-center">Команда</div>
+            <div className="text-orange-400 text-5xl uppercase text-center font-tektur">Команда</div>
 
             <div className="flex flex-wrap justify-between mt-12">
                 <TeamCard

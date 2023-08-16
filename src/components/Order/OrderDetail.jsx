@@ -18,7 +18,7 @@ const OrderDetail = () => {
     return (
         <>
             {order && <div>
-                <div className="text-sky-400 text-4xl uppercase mt-12 lg:mt-24 mb-9">Ваш заказ № {order.id}</div>
+                <div className="text-sky-400 text-4xl uppercase mt-12 lg:mt-24 mb-9 font-tektur">Ваш заказ № {order.id}</div>
 
                 <div className="flex flex-col items-center">
                     {order.tasks.map(task =>

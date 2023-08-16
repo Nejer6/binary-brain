@@ -22,7 +22,7 @@ const OrderStep = ({task}) => {
             <div className="mb-12">
                 <div className="flex justify-between sm:justify-start sm:gap-3">
                     <div
-                        className={`text-4xl w-32 uppercase ${task.state ? "text-orange-400" : "text-neutral-400"}`}>Шаг {task.step}</div>
+                        className={`text-4xl w-32 uppercase font-tektur ${task.state ? "text-orange-400" : "text-neutral-400"}`}>Шаг {task.step}</div>
                     {isCompleted &&
                         <div className="text-white text-xl uppercase bg-sky-400 leading-loose">{task.state}</div>}
                     {inProgress &&
@@ -31,7 +31,7 @@ const OrderStep = ({task}) => {
                 </div>
 
                 <div className={task.state ? "text-black" : "text-neutral-400"}>
-                    <div className={`w-full text-4xl uppercase mt-6`}>{task.name}</div>
+                    <div className={`w-full text-4xl uppercase mt-6 font-tektur`}>{task.name}</div>
 
                     <div className="w-full text-xl leading-loose hyphens-auto mt-3">{task.description}</div>
                 </div>

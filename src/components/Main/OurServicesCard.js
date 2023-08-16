@@ -9,7 +9,7 @@ const OurServicesCard = ({title, text, src}) => {
                 </div>
             </div>
 
-            <div className="text-center uppercase text-orange-400 text-4xl mb-3 mt-14">{title}</div>
+            <div className="text-center uppercase text-orange-400 text-4xl mb-3 mt-14 font-tektur">{title}</div>
             <div className="text-2xl leading-10 hyphens-auto">{text}</div>
         </div>
     );

@@ -11,7 +11,7 @@ const TeamCard = ({name, description, src}) => {
                 />
 
 
-            <div className="text-center text-sky-400 text-4xl uppercase my-5">{name}</div>
+            <div className="text-center text-sky-400 text-4xl uppercase my-5 font-tektur">{name}</div>
             <div className="text-2xl leading-9 hyphens-auto">{description}</div>
         </div>
     );

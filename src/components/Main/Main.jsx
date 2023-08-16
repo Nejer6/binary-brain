@@ -7,8 +7,8 @@ const Main = ({onClick}) => {
             <div className="mt-20">
                 <div className="flex justify-between items-center flex-wrap md:flex-nowrap gap-8">
                     <div className="w-full md:w-1/2">
-                        <span className="text-black text-5xl font-normal uppercase">Окунись в </span>
-                        <span className="text-orange-400 text-5xl font-normal uppercase">новую эпоху IT</span>
+                        <span className="text-black text-5xl font-normal uppercase font-tektur">Окунись в </span>
+                        <span className="text-orange-400 text-5xl font-normal uppercase font-tektur">новую эпоху IT</span>
                         <div className="text-2xl leading-10 mt-12 hyphens-auto">
                             Мы предоставляем широкий спектр услуг, включая разработку ПО, создание инновационных дизайн-решений, разработку мобильных приложений для платформы Android и создание современных веб-сайтов.
                         </div>

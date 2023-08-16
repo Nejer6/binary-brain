@@ -5,7 +5,7 @@ const OurServices = () => {
     return (
         <div>
             <div>
-                <div className="text-orange-400 text-5xl font-normal uppercase text-center">Наши услуги</div>
+                <div className="text-orange-400 text-5xl font-normal uppercase text-center font-tektur">Наши услуги</div>
 
                 <div className="flex justify-center items-start flex-wrap xl:flex-nowrap mt-12">
                     <OurServicesCard

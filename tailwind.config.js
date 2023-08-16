@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +23,9 @@ module.exports = {
       },
       boxShadow: {
         'full': '25px 25px 50px -12px rgb(0 0 0 / 0.25), -25px -25px 50px -12px rgb(0 0 0 / 0.25), 25px -25px 50px -12px rgb(0 0 0 / 0.25), -25px 25px 50px -12px rgb(0 0 0 / 0.25)'
+      },
+      fontFamily: {
+        tektur: ["Tektur", 'Montserrat', 'sans-serif']
       }
     },
   },

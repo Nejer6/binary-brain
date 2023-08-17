@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import HeaderMain from "@/components/Main/HeaderMain";
 import Main from "@/components/Main/Main";
 import AboutUs from "@/components/Main/AboutUs";
 import OurServices from "@/components/Main/OurServices";
@@ -9,10 +9,10 @@ import Layout from "@/components/Layout";
 
 export default function Home() {
     const chapters = [
-        {ref: useRef(), title: "Главная"},
-        {ref: useRef(), title: "О нас"},
-        {ref: useRef(), title: "Услуги"},
-        {ref: useRef(), title: "Команда"},
+        {ref: useRef(null), title: "Главная"},
+        {ref: useRef(null), title: "О нас"},
+        {ref: useRef(null), title: "Услуги"},
+        {ref: useRef(null), title: "Команда"},
         // {ref: useRef(), title: "Контакты"},
         // {ref: useRef(), title: "Отслеживание заказа"}
     ]
@@ -29,9 +29,11 @@ export default function Home() {
             const scrollPosition = window.scrollY + window.innerHeight / 2
 
             const activeChapter = chapters.find(chapter => {
-                const chapterTop = chapter.ref.current.offsetTop
-                const chapterBottom = chapterTop + chapter.ref.current.offsetHeight
-                return scrollPosition >= chapterTop && scrollPosition <= chapterBottom
+                if (chapter.ref.current !== null) {
+                    const chapterTop = chapter.ref.current.offsetTop
+                    const chapterBottom = chapterTop + chapter.ref.current.offsetHeight
+                    return scrollPosition >= chapterTop && scrollPosition <= chapterBottom
+                }
             })
 
             if (activeChapter) {
@@ -48,7 +50,7 @@ export default function Home() {
     return (
         <>
             <Layout>
-                <Header tabs={chapters} activeTab={activeChapter}/>
+                <HeaderMain tabs={chapters} activeTab={activeChapter}/>
 
                 <div className="mx-3 md:mx-16">
                     <div ref={chapters[0].ref}>

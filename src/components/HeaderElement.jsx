@@ -3,11 +3,10 @@ import Link from "next/link";
 
 const HeaderElement = ({href, text, isSelected, onClick, className}) => {
     return (
-
-        <li className={className}>
+        <div className={className}>
             {href && <Link
                 href={href}
-                className={`pt-8 cursor-pointer hover:underline inline-block px-2 ${isSelected ?
+                className={`h-full w-full flex items-end justify-center text-center cursor-pointer hover:underline px-2 ${isSelected ?
                     "bg-sky-400 text-white" :
                     "text-sky-400 bg-white"}`}
                 onClick={onClick}
@@ -15,12 +14,12 @@ const HeaderElement = ({href, text, isSelected, onClick, className}) => {
 
             {!href && <a
                 href={href}
-                className={`pt-8 cursor-pointer hover:underline inline-block px-2 ${isSelected ?
+                className={`h-full w-full flex items-end justify-center text-center cursor-pointer hover:underline px-2 ${isSelected ?
                     "bg-sky-400 text-white" :
                     "text-sky-400 bg-white"}`}
                 onClick={onClick}
             >{text}</a>}
-        </li>
+        </div>
 
     )
 

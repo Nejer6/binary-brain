@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rive-app/canvas": "^2.2.0",
+    "@rive-app/react-canvas": "^4.1.4",
+    "@rive-app/react-webgl": "^4.1.4",
     "autoprefixer": "10.4.14",
     "next": "13.4.12",
     "postcss": "8.4.27",

@@ -1,8 +1,31 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ModalInput from "@/components/Main/ModalInput";
 import Button from "@/components/Main/Button";
+import axios from "axios";
 
 const ModalWindow = ({onClick}) => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [telegram, setTelegram] = useState("")
+
+    const handleSubmit = async () => {
+        const url = 'http://92.53.120.219:8080/v1/feedback';
+        const data = {
+            name,
+            email,
+            phone,
+            telegram
+        };
+
+        try {
+            const response = await axios.post(url, data);
+            console.log(response)
+        } catch (error) {
+            console.error('Ошибка при отправке запроса:', error);
+        }
+    };
+
     return (
         <div
             className="fixed z-20 top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center"
@@ -31,10 +54,10 @@ const ModalWindow = ({onClick}) => {
                     <div className="text-2xl leading-9 mt-6">отправьте свои данные и мы с вами свяжемся</div>
 
                     <div className="mt-12">
-                        <ModalInput placeholder="Иван" title="Имя" required/>
-                        <ModalInput placeholder="ivanivanov123@mail.ru" title="E-mail" required/>
-                        <ModalInput placeholder="8 (123) 456-78-90" title="Номер телефона" required/>
-                        <ModalInput placeholder="@ivan123" title="Telegram"/>
+                        <ModalInput placeholder="Иван" title="Имя" required value={name} onChange={e => setName(e.target.value)}/>
+                        <ModalInput placeholder="ivanivanov123@mail.ru" title="E-mail" required value={email} onChange={e => setEmail(e.target.value)}/>
+                        <ModalInput placeholder="8 (123) 456-78-90" title="Номер телефона" required value={phone} onChange={e => setPhone(e.target.value)}/>
+                        <ModalInput placeholder="@ivan123" title="Telegram" value={telegram} onChange={e => setTelegram(e.target.value)}/>
                         <div className="border-t-2 border-sky-400"/>
                     </div>
 
@@ -42,7 +65,7 @@ const ModalWindow = ({onClick}) => {
                         {/*<div className="text-center text-white uppercase text-xl leading-9 m-4">*/}
                         {/*    Оставить заявку*/}
                         {/*</div>*/}
-                        <Button className="mt-6 w-80" text="Оставить заявку"/>
+                        <Button className="mt-6 w-80" text="Оставить заявку" onClick={handleSubmit}/>
                     </div>
                 </div>
             </div>

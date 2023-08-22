@@ -4,9 +4,11 @@ import * as rive from "@rive-app/canvas";
 
 const AboutUs = () => {
     const ref = useRef(null)
+
     useEffect(() => {
+        let r
         if (ref.current != null) {
-            const r = new rive.Rive({
+             r = new rive.Rive({
                 src: "/about-us.riv",
                 // Or the path to a public Rive asset
                 // src: '/public/example.riv',
@@ -17,6 +19,16 @@ const AboutUs = () => {
                     r.resizeDrawingSurfaceToCanvas();
                 },
             });
+        }
+
+        const resizeHandler = () => {
+            r.resizeDrawingSurfaceToCanvas()
+        }
+
+        window.addEventListener('resize', resizeHandler)
+
+        return () => {
+            window.removeEventListener('resize', resizeHandler)
         }
 
     }, [ref])

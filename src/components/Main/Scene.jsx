@@ -43,6 +43,9 @@ const Scene = ({...props}) => {
         sunLight.shadow.normalBias = 0.05
         scene.add(sunLight)
 
+        // const sunHelper = new THREE.DirectionalLightHelper(sunLight)
+        // scene.add(sunHelper)
+
         const blueLight = new THREE.DirectionalLight(0xFB923C, 3.5)
         blueLight.castShadow = true
         blueLight.position.set(-10, 10, 0)
@@ -77,6 +80,7 @@ const Scene = ({...props}) => {
 
         return () => {
             window.removeEventListener('resize', handleResize)
+            renderer.dispose()
         }
     }, []);
 

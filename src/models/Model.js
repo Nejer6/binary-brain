@@ -7,20 +7,21 @@ export class Model {
 
         assetsLoader.load("/assets/model3.glb", gltf => {
             this.model = gltf.scene
-            console.log(this.model.children)
 
             this.model.traverse((obj) => {
                 obj.castShadow = true
                 obj.receiveShadow = true
             })
 
-            this.model.children[0].material.metalness = 0.92
+            this.child = this.model.children[0]
 
-            // this.model.position.y = 0
-            this.model.children[0].position.y = 0
-            this.model.children[0].rotation.x = Math.PI
-            this.model.children[0].rotation.y = - Math.PI
+            this.child.material.metalness = 0.92
 
+            this.child.position.y = 0
+            this.child.rotation.x = Math.PI
+            this.child.rotation.y = - Math.PI
+
+            this.child.isGrow = false
 
             scene.add(this.model)
         }, undefined, error => {
@@ -31,8 +32,17 @@ export class Model {
     animate = () => {
 
         if (this.model) {
-            this.model.children[0].rotation.x -= 0.002
-            this.model.children[0].rotation.y += 0.002
+            this.child.rotation.x -= 0.002
+            this.child.rotation.y += 0.002
+
+            if (this.child.scale.x < 0.017) this.child.isGrow = true
+            if (this.child.scale.x >= 0.01812691055238247) this.child.isGrow = false
+
+            const scale = this.child.isGrow ? 1.0002 : 0.9998
+
+            this.child.scale.x *= scale
+            this.child.scale.y *= scale
+            this.child.scale.z *= scale
         }
 
     }

@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-const ModalInput = ({title, placeholder, required, value, onChange}) => {
+const ModalInput = ({title, placeholder, required, value, onChange, type, isError, errorMessage}) => {
     const [isActive, setIsActive] = useState(false)
     const ref = useRef(null)
 
@@ -29,8 +29,10 @@ const ModalInput = ({title, placeholder, required, value, onChange}) => {
             <div>
                 <div className={`text-sky-400 text-xl mt-2 mb-1 ${isActive ? 'mx-2' : 'mx-6'}`}>{title}
                     {required && <span className="text-orange-400"> *</span>}
+                    {isError && <div className="text-red-400">{errorMessage}</div>}
                 </div>
-                <input value={value} onChange={onChange} className={`w-full text-xl mb-3 ${isActive ? 'mx-2' : 'mx-6'}`} placeholder={placeholder} ref={ref} onClick={() => setIsActive(true)}/>
+
+                <input value={value} type={type} onChange={onChange} className={`w-full text-xl mb-3 ${isActive ? 'mx-2' : 'mx-6'}`} placeholder={placeholder} ref={ref} onClick={() => setIsActive(true)}/>
             </div>
         </div>
     );

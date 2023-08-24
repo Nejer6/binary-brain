@@ -3,7 +3,7 @@ import ModalInput from "@/components/Main/ModalInput";
 import Button from "@/components/Main/Button";
 import axios from "axios";
 
-const ModalWindow = ({onClick}) => {
+const ModalWindow = ({onClick, successHandler}) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
@@ -29,8 +29,10 @@ const ModalWindow = ({onClick}) => {
         try {
             await axios.post(url, data);
             onClick()
+            successHandler(true)
         } catch (error) {
             console.error('Ошибка при отправке запроса:', error);
+            successHandler(false)
         }
     };
 

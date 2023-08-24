@@ -22,7 +22,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       boxShadow: {
-        'full': '25px 25px 50px -12px rgb(0 0 0 / 0.25), -25px -25px 50px -12px rgb(0 0 0 / 0.25), 25px -25px 50px -12px rgb(0 0 0 / 0.25), -25px 25px 50px -12px rgb(0 0 0 / 0.25)'
+        'full': '25px 25px 50px -12px rgb(0 0 0 / 0.25), -25px -25px 50px -12px rgb(0 0 0 / 0.25), 25px -25px 50px -12px rgb(0 0 0 / 0.25), -25px 25px 50px -12px rgb(0 0 0 / 0.25)',
+        'light': '12px 12px 25px -12px rgb(0 0 0 / 0.25), -12px -12px 25px -12px rgb(0 0 0 / 0.25), 12px -12px 25px -12px rgb(0 0 0 / 0.25), -12px 12px 25px -12px rgb(0 0 0 / 0.25)'
       },
       fontFamily: {
         tektur: ["Tektur", 'Montserrat', 'sans-serif']

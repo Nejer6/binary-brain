@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Model} from "@/models/Model";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 // import {WebGLRenderer} from "three";
@@ -39,7 +39,7 @@ const Scene = ({...props}) => {
         sunLight.castShadow = true
         sunLight.position.set(10, 10, 20)
         sunLight.shadow.camera.far = 20
-        sunLight.shadow.mapSize.set(512, 512)
+        // sunLight.shadow.mapSize.set(512, 512)
         sunLight.shadow.normalBias = 0.05
         scene.add(sunLight)
 
@@ -50,7 +50,7 @@ const Scene = ({...props}) => {
         blueLight.castShadow = true
         blueLight.position.set(-10, 10, 0)
         blueLight.shadow.camera.far = 20
-        blueLight.shadow.mapSize.set(512, 512)
+        // blueLight.shadow.mapSize.set(512, 512)
         blueLight.shadow.normalBias = 0.05
         scene.add(blueLight)
 

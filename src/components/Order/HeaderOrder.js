@@ -26,7 +26,14 @@ const HeaderMain = () => {
             <div className={`flex flex-col items-center mx-3 lg:mx-0 my-3`}>
                 <object type="image/svg+xml" data="/logo.svg" className={`transition-all duration-300 ${scrollingDown ? 'max-h-0' : 'max-h-60'} `}/>
                 <div
-                    className="text-center text-sky-400 text-sm leading-snug md:text-2xl md:leading-9 font-tektur">BinaryBrains
+                    className="cursor-pointer text-center text-sky-400 text-sm leading-snug md:text-2xl md:leading-9 font-tektur"
+                    onClick={() => {
+                        window.scrollTo({
+                            behavior: 'smooth',
+                            top: 0
+                        })
+                    }}
+                >BinaryBrains
                 </div>
             </div>
 

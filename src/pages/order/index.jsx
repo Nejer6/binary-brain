@@ -42,7 +42,10 @@ const Index = () => {
             return;  // NOTE: router.query might be empty during initial render
         }
 
-        searchHandler(id)
+        if (id) {
+            searchHandler(id)
+        }
+
     }, [id, router.isReady]);
 
     return (

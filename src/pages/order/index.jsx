@@ -16,7 +16,7 @@ const Index = () => {
     const [errorNumber, setErrorNumber] = useState(null)
 
     const searchHandler = async (number) => {
-        const url = `http://92.53.120.219:8080/v1/cabinet/l/${number}`
+        const url = `https://92.53.120.219:8080/v1/cabinet/l/${number}`
         try {
             const response = await axios.get(url)
             setOrder(response.data)

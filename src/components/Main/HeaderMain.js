@@ -24,7 +24,7 @@ const HeaderMain = ({tabs, activeTab}) => {
     return (
         <header className="flex flex-wrap justify-center sm:justify-between lg:px-16 fixed z-20 top-0 w-full bg-white">
             <div className="flex flex-col items-center my-3 mx-3 lg:mx-0">
-                <object type="image/svg+xml" data="/logo.svg" className={`transition-all duration-300 ${scrollingDown ? 'max-h-0' : 'max-h-60'} `}/>
+                <object type="image/svg+xml" data="/logo.svg" className={`h-[38px] md:h-[64px]  transition-all duration-300 ${scrollingDown ? 'max-h-0' : 'max-h-60'} `}/>
                 <div
                     className="cursor-pointer text-center text-sky-400 text-sm leading-snug md:text-2xl md:leading-9 font-tektur"
                     onClick={() => {

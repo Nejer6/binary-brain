@@ -21,22 +21,22 @@ const Index = () => {
 
         try {
             const response = await fetch(url);
-            if (response.ok) {
-                const responseData = await response.json();
-                setOrder(responseData);
-                setErrorNumber(null);
-                await router.push({
-                    pathname: '/order',
-                    query: {
-                        id: number
-                    }
-                });
-            } else if (response.status !== 404) {
-                console.error('Ошибка при получении данных:', response.status);
-            }
+            // if (response.ok) {
+            const responseData = await response.json();
+            setOrder(responseData);
+            setErrorNumber(null);
+            await router.push({
+                pathname: '/order',
+                query: {
+                    id: number
+                }
+            });
+            // } else if (response.status !== 404) {
+            //     console.error('Ошибка при получении данных:', response.status);
+            // }
 
-            setOrder(null);
-            setErrorNumber(number);
+            // setOrder(null);
+            // setErrorNumber(number);
         } catch (error) {
             console.error('Ошибка при получении данных:', error);
             setOrder(null);

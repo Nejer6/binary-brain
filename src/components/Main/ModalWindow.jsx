@@ -25,7 +25,7 @@ const ModalWindow = ({onClick, successHandler}) => {
 
         if (emailError || phoneError || nameError) return;
 
-        const url = 'https://binarybrains:8080/v1/feedback';
+        const url = 'https://binarybrains.ru:8080/v1/feedback';
         const data = {
             name,
             email,

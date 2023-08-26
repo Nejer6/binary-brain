@@ -16,7 +16,7 @@ const Index = () => {
     const [errorNumber, setErrorNumber] = useState(null)
 
     const searchHandler = async (number) => {
-        const url = `https://binarybrains:8080/v1/cabinet/l/${number}`
+        const url = `https://binarybrains.ru:8080/v1/cabinet/l/${number}`
 
 
         try {

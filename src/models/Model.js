@@ -63,12 +63,14 @@ export class Model {
     }
 
     animate = () => {
-        if (this.group2) {
-            this.group2.rotation.x -= 0.002
-            this.group2.rotation.y += 0.002
-        }
+
 
         if (this.model) {
+            if (this.group2) {
+                this.group2.rotation.x -= 0.002
+                this.group2.rotation.y += 0.002
+            }
+
             this.model.rotation.x -= 0.002
             this.model.rotation.y += 0.002
 

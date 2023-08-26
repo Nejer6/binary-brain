@@ -25,6 +25,7 @@ const Index = () => {
             const responseData = await response.json();
 
             if (responseData) {
+                console.log(responseData)
                 setOrder(responseData);
                 setErrorNumber(null);
                 await router.push({

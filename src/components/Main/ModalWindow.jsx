@@ -25,7 +25,7 @@ const ModalWindow = ({onClick, successHandler}) => {
 
         if (emailError || phoneError || nameError) return;
 
-        const url = 'https://92.53.120.219:8080/v1/feedback';
+        const url = 'http://92.53.120.219:8080/v1/feedback';
         const data = {
             name,
             email,

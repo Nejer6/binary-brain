@@ -33,10 +33,10 @@ const Main = ({onClick}) => {
                     </div>
 
                     {/*<object type="image/svg+xml" data="/main.svg" className="w-full md:w-1/2"/>*/}
-                    {size.width >= 744 && <Scene className="w-full md:w-1/2 2xl:w-1/3 mx-20 md:mx-0 order-first md:order-last"/>}
-                    {size.width < 744 && <video className="order-first md:order-last px-14" ref={videoRef} autoPlay={true} loop={true} muted={true} >
-                        <source src="/main.mp4" type="video/mp4"/>
-                    </video>}
+                    <Scene className="w-full md:w-1/2 2xl:w-1/3 mx-20 md:mx-0 order-first md:order-last"/>
+                    {/*{size.width < 744 && <video className="order-first md:order-last px-14" ref={videoRef} autoPlay={true} loop={true} muted={true} >*/}
+                    {/*    <source src="/main.mp4" type="video/mp4"/>*/}
+                    {/*</video>}*/}
                 </div>
             </div>
         </div>

@@ -17,24 +17,52 @@ const Index = () => {
 
     const searchHandler = async (number) => {
         const url = `https://binarybrains:8080/v1/cabinet/l/${number}`
+
+
         try {
-            const response = await axios.get(url)
-            setOrder(response.data)
-            setErrorNumber(null)
-            await router.push({
-                pathname: '/order',
-                query: {
-                    id: number
-                }
-            })
-        } catch (error) {
-            if (error.response.status !== 404) {
-                console.error(error)
+            const response = await fetch(url, {
+                mode: 'no-cors'
+            });
+            if (response.ok) {
+                const responseData = await response.json();
+                setOrder(responseData);
+                setErrorNumber(null);
+                await router.push({
+                    pathname: '/order',
+                    query: {
+                        id: number
+                    }
+                });
+            } else if (response.status !== 404) {
+                console.error('Ошибка при получении данных:', response.status);
             }
 
-            setOrder(null)
-            setErrorNumber(number)
+            setOrder(null);
+            setErrorNumber(number);
+        } catch (error) {
+            console.error('Ошибка при получении данных:', error);
+            setOrder(null);
+            setErrorNumber(number);
         }
+
+        // try {
+        //     const response = await axios.get(url)
+        //     setOrder(response.data)
+        //     setErrorNumber(null)
+        //     await router.push({
+        //         pathname: '/order',
+        //         query: {
+        //             id: number
+        //         }
+        //     })
+        // } catch (error) {
+        //     if (error.response.status !== 404) {
+        //         console.error(error)
+        //     }
+        //
+        //     setOrder(null)
+        //     setErrorNumber(number)
+        // }
     }
 
     useEffect(() => {

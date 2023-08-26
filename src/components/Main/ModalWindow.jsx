@@ -33,14 +33,35 @@ const ModalWindow = ({onClick, successHandler}) => {
             telegram
         };
 
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            mode: 'no-cors'
+        }
+
         try {
-            await axios.post(url, data);
-            onClick()
-            successHandler(true)
+            const response = await fetch(url, requestOptions);
+            if (response.ok) {
+                onClick()
+                successHandler(true)
+            } else {
+                successHandler(false)
+            }
         } catch (error) {
-            console.error('Ошибка при отправке запроса:', error);
             successHandler(false)
         }
+
+        // try {
+        //     await axios.post(url, data);
+        //     onClick()
+        //     successHandler(true)
+        // } catch (error) {
+        //     console.error('Ошибка при отправке запроса:', error);
+        //     successHandler(false)
+        // }
     };
 
     return (

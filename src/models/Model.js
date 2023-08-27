@@ -20,7 +20,7 @@ export class Model {
         const material = new THREE.MeshPhysicalMaterial({
             "color": 15198183,
             "roughness": 0.5,
-            "metalness": 0.92,
+            "metalness": 0.85,
             side: THREE.DoubleSide,
 
         })
@@ -41,7 +41,7 @@ export class Model {
 
             this.child = this.model.children[0]
 
-            this.child.material.metalness = 0.92
+            this.child.material.metalness = 0.85
             this.child.position.y = 0
             this.child.rotation.y = - Math.PI
             this.child.scale.set(0.0135, 0.0135, 0.0135)

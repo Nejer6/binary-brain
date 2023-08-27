@@ -26,13 +26,13 @@ const ModalInput = ({title, placeholder, required, value, onChange, type, isErro
         }>
             {isActive && <div className=" bg-orange-400 w-4"></div>}
 
-            <div>
-                <div className={`text-sky-400 text-xl mt-2 mb-1 ${isActive ? 'mx-2' : 'mx-6'}`}>{title}
+            <div className={isActive ? 'px-2' : 'px-6'}>
+                <div className={`text-sky-400 text-xl mt-2 mb-1 `}>{title}
                     {required && <span className="text-orange-400"> *</span>}
                     {isError && <div className="text-red-400">{errorMessage}</div>}
                 </div>
 
-                <input value={value} type={type} onChange={onChange} className={`w-full text-xl mb-3 ${isActive ? 'mx-2' : 'mx-6'}`} placeholder={placeholder} ref={ref} onClick={() => setIsActive(true)}/>
+                <input value={value} type={type} onChange={onChange} className={`w-full text-xl mb-3`} placeholder={placeholder} ref={ref} onClick={() => setIsActive(true)}/>
             </div>
         </div>
     );

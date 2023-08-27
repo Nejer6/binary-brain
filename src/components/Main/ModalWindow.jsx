@@ -67,7 +67,7 @@ const ModalWindow = ({onClick, successHandler}) => {
 
     return (
         <div
-            className="fixed z-20 top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center"
+            className="fixed z-20 top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-start md:items-center"
             onClick={onClick}
         >
             <div
@@ -76,7 +76,7 @@ const ModalWindow = ({onClick, successHandler}) => {
                     e.stopPropagation()
                 }}
             >
-                <div className="mx-16 my-12">
+                <div className="mx-16 my-6 md:my-12">
                     <div className="flex-row justify-between flex items-start">
                         <div className="text-sky-400 text-4xl uppercase text-start w-full md:w-auto font-tektur">Оставьте заявку</div>
                         <img
@@ -90,9 +90,9 @@ const ModalWindow = ({onClick, successHandler}) => {
                     </div>
 
 
-                    <div className="text-2xl leading-9 mt-6">отправьте свои данные и мы с вами свяжемся</div>
+                    <div className="text-2xl leading-9 mt-3  md:mt-6">отправьте свои данные и мы с вами свяжемся</div>
 
-                    <div className="mt-12">
+                    <div className="mt-6 md:mt-12">
                         <ModalInput
                             placeholder="Иван"
                             title="Имя"

@@ -42,7 +42,6 @@ export class Model {
             this.child = this.model.children[0]
 
             this.child.material.metalness = 0.92
-            console.log(this.child.material)
             this.child.position.y = 0
             this.child.rotation.y = - Math.PI
             this.child.scale.set(0.0135, 0.0135, 0.0135)
@@ -51,8 +50,6 @@ export class Model {
 
             scene.add(this.model)
         }, (event) => {
-            console.log(event)
-            console.log((event.loaded / 11216220) * 100 + '% loaded')
             const current = event.loaded / 11216220
             dodecahedron.scale.set(current, current, current)
             group.rotation.y = current * TARGET_Y

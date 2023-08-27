@@ -17,7 +17,17 @@ const ModalWindow = ({onClick, successHandler}) => {
 
         const emailError = !re.test(email)
         const nameError = name.length < 2
-        const phoneError = phone.length < 10
+        let phoneError = phone.length < 10
+        for (let i = 0; i < phone.length; i++) {
+            const char = phone[i]
+            if (char !== " " && char !== "+" && char !== "(" && char !== ")" && char !== "0" && char !== "-" ) {
+                if (+char) {
+                    continue
+                }
+                phoneError = true
+            }
+        }
+
 
         setIsNameError(nameError)
         setIsEmailError(emailError)
@@ -118,7 +128,7 @@ const ModalWindow = ({onClick, successHandler}) => {
                                 setIsPhoneError(false)
                             }}
                             isError={isPhoneError}
-                            errorMessage="Номер телефона слишком короткий"
+                            errorMessage="Введен неверный номер телефона"
                         />
                         <ModalInput placeholder="@ivan123" title="Telegram" value={telegram} onChange={e => setTelegram(e.target.value)}/>
                         <div className="border-t-2 border-sky-400"/>

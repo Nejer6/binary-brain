@@ -35,9 +35,9 @@ const Scene = ({...props}) => {
         orbit.enablePan = false
         orbit.update()
 
-        const sunLight = new THREE.DirectionalLight(0x38BDF8, 3.5)
+        const sunLight = new THREE.DirectionalLight(0xFB923C, 3.5)
         sunLight.castShadow = true
-        sunLight.position.set(10, 10, 20)
+        sunLight.position.set(-10, 10, 0)
         sunLight.shadow.camera.far = 20
         // sunLight.shadow.mapSize.set(512, 512)
         sunLight.shadow.normalBias = 0.05
@@ -46,13 +46,21 @@ const Scene = ({...props}) => {
         // const sunHelper = new THREE.DirectionalLightHelper(sunLight)
         // scene.add(sunHelper)
 
-        const blueLight = new THREE.DirectionalLight(0xFB923C, 3.5)
+        const blueLight = new THREE.DirectionalLight(0x38BDF8, 3.5)
         blueLight.castShadow = true
-        blueLight.position.set(-10, 10, 0)
+        blueLight.position.set(10, 10, 20)
         blueLight.shadow.camera.far = 20
         // blueLight.shadow.mapSize.set(512, 512)
         blueLight.shadow.normalBias = 0.05
         scene.add(blueLight)
+
+        const blueLight2 = new THREE.DirectionalLight(0x38BDF8, 3.5)
+        blueLight2.castShadow = true
+        blueLight2.position.set(10, -5, 0)
+        blueLight2.shadow.camera.far = 20
+        // blueLight.shadow.mapSize.set(512, 512)
+        blueLight2.shadow.normalBias = 0.05
+        scene.add(blueLight2)
 
         const ambientLight = new THREE.AmbientLight(0xffffff, 1)
         scene.add(ambientLight)

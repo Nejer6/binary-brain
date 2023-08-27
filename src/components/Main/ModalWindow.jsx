@@ -16,8 +16,8 @@ const ModalWindow = ({onClick, successHandler}) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         const emailError = !re.test(email)
-        const nameError = name === ""
-        const phoneError = phone === ""
+        const nameError = name.length < 2
+        const phoneError = phone.length < 10
 
         setIsNameError(nameError)
         setIsEmailError(emailError)
@@ -53,15 +53,6 @@ const ModalWindow = ({onClick, successHandler}) => {
         } catch (error) {
             successHandler(false)
         }
-
-        // try {
-        //     await axios.post(url, data);
-        //     onClick()
-        //     successHandler(true)
-        // } catch (error) {
-        //     console.error('Ошибка при отправке запроса:', error);
-        //     successHandler(false)
-        // }
     };
 
     return (
@@ -102,7 +93,7 @@ const ModalWindow = ({onClick, successHandler}) => {
                                 setIsNameError(false)
                             }}
                             isError={isNameError}
-                            errorMessage={"Введите имя"}
+                            errorMessage={"Имя слишком короткое"}
                         />
                         <ModalInput
                             placeholder="ivanivanov123@mail.ru"
@@ -127,7 +118,7 @@ const ModalWindow = ({onClick, successHandler}) => {
                                 setIsPhoneError(false)
                             }}
                             isError={isPhoneError}
-                            errorMessage="Введите номер телефона"
+                            errorMessage="Номер телефона слишком короткий"
                         />
                         <ModalInput placeholder="@ivan123" title="Telegram" value={telegram} onChange={e => setTelegram(e.target.value)}/>
                         <div className="border-t-2 border-sky-400"/>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import HeaderElement from "@/components/HeaderElement";
 
-const HeaderMain = () => {
+const HeaderOrder = () => {
     const [scrollingDown, setScrollingDown] = useState(false)
 
     useEffect(() => {
@@ -55,4 +55,4 @@ const HeaderMain = () => {
     );
 };
 
-export default HeaderMain;
+export default HeaderOrder;

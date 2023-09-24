@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import ModalInput from "@/components/Main/ModalInput";
-import Button from "@/components/Main/Button";
-import axios from "axios";
+import Button from "@/components/Button";
 
 const ModalWindow = ({onClick, successHandler}) => {
     const [name, setName] = useState("")

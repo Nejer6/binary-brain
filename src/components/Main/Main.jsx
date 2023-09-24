@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "@/components/Main/Button";
+import Button from "@/components/Button";
 import Scene from "@/components/Main/Scene";
 
 const Main = ({onClick}) => {

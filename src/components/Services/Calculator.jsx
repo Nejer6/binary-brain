@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import Button from "@/components/Button";
+import WebsiteCalculator from "@/components/Services/WebsiteCalculator";
+import MobileAppCalculator from "@/components/Services/MobileAppCalculator";
+import BigBlock from "@/components/BigBlock";
+import BigBlockWithTitle from "@/components/BigBlockWithTitle";
+import SmallBlock from "@/components/SmallBlock";
 
 const ProjectType = {
     WEBSITE: 'Website',
@@ -18,25 +23,32 @@ const Calculator = () => {
                 проект
             </div>
 
-            <div className="uppercase text-4xl font-tektur mt-24">Выберете тип проекта:</div>
-            <div className="flex flex-row justify-center mt-12">
-                <Button text="Веб-сайт"
-                        className="min-w"
-                        onClick={() => setSelectedProjectType(ProjectType.WEBSITE)}
-                        selected={selectedProjectType === ProjectType.WEBSITE}
-                />
-                <Button text="Мобильное приложение"
-                        className="mx-6 h-16"
-                        onClick={() => setSelectedProjectType(ProjectType.MOBILE_APP)}
-                        selected={selectedProjectType === ProjectType.MOBILE_APP}
-                />
-                <Button text="Мобильное приложение и веб-сайт"
-                        onClick={() => setSelectedProjectType(ProjectType.WEBSITE_WITH_MOBILE_APP)}
-                        selected={selectedProjectType === ProjectType.WEBSITE_WITH_MOBILE_APP}
-                />
-            </div>
+            <BigBlockWithTitle title="Выберете тип проекта:">
+                <SmallBlock className="flex justify-center">
+                    <Button text="Веб-сайт"
+                            className="min-w"
+                            onClick={() => setSelectedProjectType(ProjectType.WEBSITE)}
+                            selected={selectedProjectType === ProjectType.WEBSITE}
+                    />
+                    <Button text="Мобильное приложение"
+                            className="mx-6 h-16"
+                            onClick={() => setSelectedProjectType(ProjectType.MOBILE_APP)}
+                            selected={selectedProjectType === ProjectType.MOBILE_APP}
+                    />
+                    <Button text="Мобильное приложение и веб-сайт"
+                            onClick={() => setSelectedProjectType(ProjectType.WEBSITE_WITH_MOBILE_APP)}
+                            selected={selectedProjectType === ProjectType.WEBSITE_WITH_MOBILE_APP}
+                    />
+                </SmallBlock>
+            </BigBlockWithTitle>
 
-            {selectedProjectType && <div className="flex flex-col items-center text-2xl font-bold">
+            <BigBlock>
+                {selectedProjectType === ProjectType.WEBSITE && <WebsiteCalculator/>}
+                {selectedProjectType === ProjectType.MOBILE_APP && <MobileAppCalculator/>}
+                {/*{selectedProjectType === ProjectType.WEBSITE_WITH_MOBILE_APP && <WebsiteWithMobileAppCalculator/>}*/}
+            </BigBlock>
+
+            {selectedProjectType && <div className="flex flex-col items-center text-2xl font-bold mt-24">
                 <div>Примерная стоимость проекта:</div>
                 <div>186 500р</div>
                 <Button className="mt-6" text="Заказать проект"/>

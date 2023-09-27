@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Button from "@/components/Main/Button";
 import Scene from "@/components/Main/Scene";
-import Testbutton from '@/pages/Testbutton';
 import ButtonGroup from '@/pages/ButtonGroup';
 
-const Main = ({onClick}) => {
+const ButtonType = {
+    NEED_DEVELOP: "Нужна разработка",
+    ALREADY_HAVE: "Уже есть",
+    TEST: "TEST"
+}
 
-    const [active, setActive] = useState(false);
-    const handleClick = () => {
-      setActive(!active);
-    };
+const Main = ({onClick}) => {
+    const [activeButton, setActiveButton] = useState(null)
 
     return (
         <div>
@@ -22,7 +23,12 @@ const Main = ({onClick}) => {
                             Мы предоставляем комплекс IT услуг, включающий в себя  разработку ПО, создание инновационных дизайн-решений, разработку мобильных приложений для платформы Android и создание современных веб-сайтов.
                         </div>
                         <Button className="h-16 w-80 mt-6" text="связаться" onClick={onClick}/>
-                        <ButtonGroup />
+
+                        <ButtonGroup
+                            list={[ButtonType.NEED_DEVELOP, ButtonType.ALREADY_HAVE, ButtonType.TEST]}
+                            isSelected={activeButton}
+                            onClick={setActiveButton}
+                        />
                     </div>
 
                     {/*<object type="image/svg+xml" data="/main.svg" className="w-full md:w-1/2"/>*/}

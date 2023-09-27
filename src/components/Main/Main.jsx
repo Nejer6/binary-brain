@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from "@/components/Main/Button";
 import Scene from "@/components/Main/Scene";
-import ButtonGroup from '@/pages/ButtonGroup';
+import ButtonGroup from '@/components/ButtonGroup';
 
 const ButtonType = {
     NEED_DEVELOP: "Нужна разработка",

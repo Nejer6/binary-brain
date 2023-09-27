@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from "@/components/Main/Button";
 import Scene from "@/components/Main/Scene";
+import Testbutton from '@/pages/Testbutton';
+import ButtonGroup from '@/pages/ButtonGroup';
 
 const Main = ({onClick}) => {
+
+    const [active, setActive] = useState(false);
+    const handleClick = () => {
+      setActive(!active);
+    };
+
     return (
         <div>
             <div className="pt-52 sm:pt-20 md:pt-40">
@@ -14,6 +22,7 @@ const Main = ({onClick}) => {
                             Мы предоставляем комплекс IT услуг, включающий в себя  разработку ПО, создание инновационных дизайн-решений, разработку мобильных приложений для платформы Android и создание современных веб-сайтов.
                         </div>
                         <Button className="h-16 w-80 mt-6" text="связаться" onClick={onClick}/>
+                        <ButtonGroup />
                     </div>
 
                     {/*<object type="image/svg+xml" data="/main.svg" className="w-full md:w-1/2"/>*/}

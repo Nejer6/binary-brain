@@ -5,6 +5,7 @@ import MobileAppCalculator from "@/components/Services/MobileAppCalculator";
 import BigBlock from "@/components/BigBlock";
 import BigBlockWithTitle from "@/components/BigBlockWithTitle";
 import SmallBlock from "@/components/SmallBlock";
+import WebsiteWithMobileAppCalculator from "@/components/Services/WebsiteWithMobileAppCalculator";
 
 const ProjectType = {
     WEBSITE: 'Website',
@@ -12,7 +13,7 @@ const ProjectType = {
     WEBSITE_WITH_MOBILE_APP: 'Website with Mobile App'
 }
 
-const Calculator = () => {
+const Calculator = ({setIsModalOpen}) => {
 
     const [selectedProjectType, setSelectedProjectType] = useState(null)
 
@@ -45,10 +46,10 @@ const Calculator = () => {
             <BigBlock>
                 {selectedProjectType === ProjectType.WEBSITE && <WebsiteCalculator/>}
                 {selectedProjectType === ProjectType.MOBILE_APP && <MobileAppCalculator/>}
-                {/*{selectedProjectType === ProjectType.WEBSITE_WITH_MOBILE_APP && <WebsiteWithMobileAppCalculator/>}*/}
+                {selectedProjectType === ProjectType.WEBSITE_WITH_MOBILE_APP && <WebsiteWithMobileAppCalculator setIsModalOpen={setIsModalOpen}/>}
             </BigBlock>
 
-            {selectedProjectType && <div className="flex flex-col items-center text-2xl font-bold mt-24">
+            {(selectedProjectType === ProjectType.WEBSITE || selectedProjectType === ProjectType.MOBILE_APP) && <div className="flex flex-col items-center text-2xl font-bold mt-24">
                 <div>Примерная стоимость проекта:</div>
                 <div>186 500р</div>
                 <Button className="mt-6" text="Заказать проект"/>
